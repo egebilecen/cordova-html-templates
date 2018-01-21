@@ -1,0 +1,97 @@
+/* Starting Template For Cordova
+ * Author: Ege Bilecen
+ *
+ * egebilecen.info
+ */
+
+@import url('fonts.css');
+
+html,body{ width: 100%; height: 100%; }
+div, input, textarea{ box-sizing: border-box !important; }
+input,textarea,select,button:focus{ outline: none !important; }
+
+body{
+    color: inherit; /* FONT COLOR */
+    background: inherit; /* BACKGROUND COLOR */
+    font-family: "fisek";
+}
+div#header{
+    width: 100%;
+    height: 50px;
+    background: inherit; /* HEADER BAR COLOR */
+    border-bottom: 1px solid inherit; /* HEADER BAR BORDER BOTTOM COLOR */
+    padding: 5px;
+    position: fixed;
+    top:0;
+    left: 0;
+}
+div#header > #title{
+    display: block;
+    text-align: center;
+    font-size: 30px; /* HEADER BAR FONT SIZE */
+    font-family: "Yozakura"; /* HEADER BAR FONT FAMILY */
+    margin-top: 6px;
+    color: inherit; /* HEADER BAR FONT COLOR - CHANGE IT FROM settings.js */
+}
+div#header > #open-left-menu{
+    width: inherit;
+    height: inherit;
+    background: transparent;
+    position: absolute;
+    top: inherit;
+    left: inherit;
+}
+div#header > #open-left-menu > .bar{
+    display: block;
+    width: 100%;
+    height: inherit;
+    background-color: inherit;
+    margin-bottom: 6px;
+    border-radius: 6px;
+}
+div#header > #open-left-menu > .bar:last-child{
+    margin-bottom: 0 !important;
+}
+div#header > #back-button{
+    position: absolute;
+    top: 16px;
+    right: 10px;
+    font-weight: bold;
+    font-size: 20px; /* BACK BUTTON FONT SIZE */
+    transition: transform, 350ms;
+    display: none;
+	color:inherit;/* BACK BUTTON COLOR */
+}
+div.left-menu{
+    height: 100%;
+    width:0;
+    background-color: inherit;
+    padding-top: inherit;
+    padding-left: inherit;
+    padding-right: inherit;
+    padding-bottom: inherit;
+    position: absolute;
+    overflow: auto;
+}
+div#app-main{
+    width: 100%;
+    height: 100%;
+    padding-top: 60px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.anim-scale-up:active{
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    -o-transform: scale(1.1);
+    transform: scale(1.1);
+}
+.anim-scale-down:active{
+    -webkit-transform: scale(0.9);
+    -moz-transform: scale(0.9);
+    -ms-transform: scale(0.9);
+    -o-transform: scale(0.9);
+    transform: scale(0.9);
+}
+/* START WRITING YOUR STYLE HERE */
