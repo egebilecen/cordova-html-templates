@@ -79,6 +79,7 @@ div#app-main{
     padding-top: 60px;
     padding-left: 10px;
     padding-right: 10px;
+    font-size: 22px;
 }
 .anim-scale-up:active{
     -webkit-transform: scale(1.1);
