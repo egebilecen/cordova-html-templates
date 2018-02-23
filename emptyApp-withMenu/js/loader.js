@@ -9,7 +9,8 @@ var __XMASD = {
     scripts  : [ //scripts that gonna be installed (in-order)
         'func.js',
         'settings.js',
-        'init.js'
+        'ui_init.js',
+        'custom_init.js'
     ]
 };
 
