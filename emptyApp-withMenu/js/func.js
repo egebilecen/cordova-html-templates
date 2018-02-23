@@ -88,7 +88,68 @@ function toggle_left_menu()
     }
 }
 
-/* Show/Hide loading screen */
-function toggle_loading_screen(loading_text, desc_text){
+function show_intermediate_screen(obj){
+    if(typeof obj === "undefined" || typeof obj !== "object")
+    {
+        console.log("[!] - Please pass a object as argument.");
+        return false;
+    }
+    if(typeof obj.background_color === "undefined" || typeof obj.background_color !== "string")
+        obj.background_color = "rgba(0,0,0,0.75)";
 
+    var img_dom;
+    if(typeof obj.image === "undefined" || typeof obj.image !== "object")
+    {
+        obj.image = null;
+        img_dom = "";
+    }
+    else
+    {
+        if(typeof obj.image.src === "undefined" || typeof obj.image.src !== "string")
+            obj.image = null;
+        else
+        {
+            if(typeof obj.image.width  === "undefined" || typeof obj.image.width !== "number")
+                obj.image.width = 50;
+            if(typeof obj.image.height === "undefined" || typeof obj.image.height !== "number")
+                obj.image.height = 50;
+            if(typeof obj.image.css === "undefined" || typeof obj.image.css !== "string")
+                obj.image.css = "";
+
+            img_dom = "<img src='"+obj.image.src+"' style='display: block; margin: 0 auto;width:"+obj.image.width+"px;height:"+obj.image.height+"px; margin-bottom:5px;'"+obj.image.css+">";
+        }
+
+    }
+    if(typeof obj.text === "undefined")
+        obj.text = "";
+
+    var dom = ""+
+    "<div id='intermediate-screen' style='width: 100%;height: 100%;position: absolute;left:0;top:0;z-index:100;background:"+obj.background_color+"; display: none; padding:10px;padding-top:75px;' status='1'>"+
+    img_dom +
+    "<span id='text' style='display: block;text-align: center;font-size:22px;'>"+obj.text+"</span>" +
+    "</div>";
+
+    if(!$("#intermediate-screen").length) //not exist
+    {
+        $("#app-main").append(dom);
+        $("#intermediate-screen").fadeIn(300);
+    }
+    else
+    {
+        $("#intermediate-screen").remove();
+        $("#app-main").append(dom);
+        $("#intermediate-screen").fadeIn(300);
+    }
+}
+
+function hide_intermediate_screen(){
+    if(!$("#intermediate-screen").length) //not exist
+        return false;
+    else
+    {
+        if($("#intermediate-screen").attr("status") === "1")
+        {
+            $("#intermediate-screen").attr("status","0").fadeOut(300);
+        }
+    }
 }
