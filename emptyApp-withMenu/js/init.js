@@ -44,7 +44,7 @@ $("div.left-menu").css({
     paddingTop      : SETTINGS.app.UI.left_menu.padding.top    + "px", //50 is header's height (Not changable)
     paddingBottom   : SETTINGS.app.UI.left_menu.padding.bottom + "px",
     top        : $("div#header").css("height"),
-    left       : "-250px",
+    left       : "-"+String(window.innerWidth * 60 / 100)+"px",
     color      : SETTINGS.app.UI.left_menu.text.color,
     fontSize   : SETTINGS.app.UI.left_menu.text.size + "px",
     fontWeight : SETTINGS.app.UI.left_menu.text.weight,
