@@ -81,9 +81,14 @@ function toggle_left_menu()
     }
     else if(status === 1)
     {
-        dom_obj.stop().css({left : "-250px"});
+        dom_obj.stop().css({left : "-"+dom_obj.css("width")});
         setTimeout(function () {
             dom_obj.attr("status",0);
         },SETTINGS.app.UI.left_menu.anim_duration - 200);
     }
+}
+
+/* Show/Hide loading screen */
+function toggle_loading_screen(loading_text, desc_text){
+
 }
