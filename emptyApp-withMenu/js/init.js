@@ -9,7 +9,7 @@ $("body").css({
 //header
 $("div#header").css({
     backgroundColor : SETTINGS.app.UI.header.background_color,
-    bordorColor     : "1px solid "+SETTINGS.app.UI.header.border_color
+    borderBottom     : "1px solid "+SETTINGS.app.UI.header.border_color
 });
 
 //header > left menu button
