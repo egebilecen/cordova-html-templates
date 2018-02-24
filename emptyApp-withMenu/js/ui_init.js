@@ -37,6 +37,7 @@ $("span#back-button").html(SETTINGS.app.back_button_text).attr("class", $("span#
 //left menu
 $("div.left-menu").css({
     width : window.innerWidth * 60 / 100,
+    height: window.innerHeight - parseInt($("#header").css("height").replace("px","")),
     transition      : "left "+String(SETTINGS.app.UI.left_menu.anim_duration)+"ms",
     backgroundColor : SETTINGS.app.UI.left_menu.background_color,
     paddingLeft     : SETTINGS.app.UI.left_menu.padding.left   + "px",
