@@ -29,8 +29,8 @@ div#header > #title{
     display: block;
     text-align: center;
     font-size: 30px; /* HEADER BAR FONT SIZE */
-    font-family: "Yozakura"; /* HEADER BAR FONT FAMILY */
-    margin-top: 6px;
+    font-family: "JMH-Arkham"; /* HEADER BAR FONT FAMILY */
+    margin-top: 4px;
     color: inherit; /* HEADER BAR FONT COLOR - CHANGE IT FROM settings.js */
 }
 div#header > #open-left-menu{
@@ -72,6 +72,7 @@ div.left-menu{
     padding-bottom: inherit;
     position: absolute;
     overflow: auto;
+    z-index:99;
 }
 div#app-main{
     width: 100%;
@@ -79,7 +80,7 @@ div#app-main{
     padding-top: 60px;
     padding-left: 10px;
     padding-right: 10px;
-    font-size: 22px;
+    font-size:22px;
 }
 .anim-scale-up:active{
     -webkit-transform: scale(1.1);
