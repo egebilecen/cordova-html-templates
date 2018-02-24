@@ -44,6 +44,7 @@ function load_page(target, dom, error_msg)
                 type    : "get",
                 success : function (data){
                     $(dom).html(data);
+                    SETTINGS.AJAX.lock1 = false;
                 },
                 error : function(){
                     alert(error_msg);
@@ -74,7 +75,9 @@ function toggle_left_menu()
 
     if(status === 0)
     {
-        dom_obj.stop().css({left : 0});
+        var scroll_top    = document.documentElement.scrollTop;
+        var header_height = parseInt($("#header").css("height").replace("px",""));
+        dom_obj.stop().css({left : 0,top:header_height + scroll_top});
         setTimeout(function () {
             dom_obj.attr("status",1);
         },SETTINGS.app.UI.left_menu.anim_duration - 200);
@@ -96,6 +99,9 @@ function show_intermediate_screen(obj){
     }
     if(typeof obj.background_color === "undefined" || typeof obj.background_color !== "string")
         obj.background_color = "rgba(0,0,0,0.75)";
+
+    if(typeof obj.anim === "undefined" || typeof obj.anim !== "boolean")
+        obj.anim = true;
 
     var img_dom;
     if(typeof obj.image === "undefined" || typeof obj.image !== "object")
@@ -132,24 +138,26 @@ function show_intermediate_screen(obj){
     if(!$("#intermediate-screen").length) //not exist
     {
         $("#app-main").append(dom);
-        $("#intermediate-screen").fadeIn(300);
+        $("#intermediate-screen").fadeIn((obj.anim) ? 300 : 0);
     }
     else
     {
         $("#intermediate-screen").remove();
         $("#app-main").append(dom);
-        $("#intermediate-screen").fadeIn(300);
+        $("#intermediate-screen").fadeIn((obj.anim) ? 300 : 0);
     }
 }
 
-function hide_intermediate_screen(){
+function hide_intermediate_screen(anim){
+    if(typeof anim === "undefined" || typeof anim !== "boolean")
+        anim = true;
     if(!$("#intermediate-screen").length) //not exist
         return false;
     else
     {
         if($("#intermediate-screen").attr("status") === "1")
         {
-            $("#intermediate-screen").attr("status","0").fadeOut(300);
+            $("#intermediate-screen").attr("status","0").fadeOut((anim) ? 300 : 0);
         }
     }
 }
