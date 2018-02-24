@@ -24,6 +24,7 @@ div#header{
     position: fixed;
     top:0;
     left: 0;
+    z-index:99;
 }
 div#header > #title{
     display: block;
