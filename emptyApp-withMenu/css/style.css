@@ -29,8 +29,8 @@ div#header > #title{
     display: block;
     text-align: center;
     font-size: 30px; /* HEADER BAR FONT SIZE */
-    font-family: "JMH-Arkham"; /* HEADER BAR FONT FAMILY */
-    margin-top: 4px;
+    font-family: "Yozakura"; /* HEADER BAR FONT FAMILY */
+    margin-top: 6px;
     color: inherit; /* HEADER BAR FONT COLOR - CHANGE IT FROM settings.js */
 }
 div#header > #open-left-menu{
