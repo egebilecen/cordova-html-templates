@@ -103,6 +103,9 @@ function show_intermediate_screen(obj){
     if(typeof obj.anim === "undefined" || typeof obj.anim !== "boolean")
         obj.anim = true;
 
+    if(typeof obj.closable === "undefined" || typeof obj.closable !== "boolean")
+        obj.closable = false;
+
     var img_dom;
     if(typeof obj.image === "undefined" || typeof obj.image !== "object")
     {
@@ -130,8 +133,11 @@ function show_intermediate_screen(obj){
         obj.text = "";
 
     var dom = ""+
-    "<div id='intermediate-screen' style='width: 100%;height: 100%;position: absolute;left:0;top:0;z-index:100;background:"+obj.background_color+"; display: none; padding:10px;padding-top:75px;' status='1'>"+
-    img_dom +
+    "<div id='intermediate-screen' style='width: 100%;height: 100%;position: absolute;left:0;top:0;z-index:100;background:"+obj.background_color+"; display: none; padding:10px;padding-top:75px;' status='1'>";
+    
+    (obj.closable) ? dom += "<span class='anim-scale-down' onclick='this.parentElement.remove()' id='close-button' style='font-weight:bold;font-size:26px;position:absolute;right:10px;top:10px;color:#fff;'>X</span>" : "";
+    
+    dom += img_dom +
     "<span id='text' style='display: block;text-align: center;font-size:22px;'>"+obj.text+"</span>" +
     "</div>";
 
